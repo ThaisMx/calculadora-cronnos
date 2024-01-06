@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora Cronnos Empreendimentos</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <script type="7f53ec26eef9c7a434210480-text/javascript">
+      (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+              'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-M3P7NDT');
+    </script>
+  </head>
+  <body class="calc-rs">
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M3P7NDT"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <section id="calculadora">
+      <div class="container">
+        <div class="box-gray top">
+          <div class="top__title">
+            <img src="./img/Novos Ricos (1).png" alt="logo os novos ricos">
+          </div>
+          <div class="top__description">
+            <span>
+              Preencha os dados abaixo e saiba o quanto você vai ganhar em até 5
+              anos no day trade, sem arriscar
+              <strong class="text-yellow">o próprio capital</strong>
+            </span>
+          </div>
+        </div>
+        <div class="box-gray interval">
+          <div class="interval__label">
+            <h3>Selecione o aporte:</h3>
+          </div>
+          <div class="interval__value">
+            <select class="interval__value" name="interval" id="interval">
+              <option value="1" data-label="mensal">Mensal</option>
+              <option value="2" data-label="bimestral">Bimestral</option>
+              <option value="3" data-label="trimestral">Trimestral</option>
+              <option value="6" data-label="semestral">Semestral</option>
+              <option value="12" data-label="anual">Anual</option>
+            </select>
+          </div>
+        </div>
+        <div class="box-gray form">
+          <div class="form__item">
+            <div class="item__label">
+              <span for="money">Valor inicial</span>
+            </div>
+            <div class="item__input">
+              <span class="currency">R$</span>
+              <input
+                type="text"
+                id="money"
+                name="money"
+                placeholder="Inicial"
+                value="2000"
+                step="100"
+              />
+              <div class="item__increment">
+                <button type="button" class="less">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="more">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__item">
+            <div class="item__label">
+              <span for="money">Retirada mensal</span>
+            </div>
+            <div class="item__input">
+              <span class="currency">R$</span>
+              <input
+                type="text"
+                id="decrease"
+                name="decrease"
+                placeholder
+                value="0"
+                step="100"
+              />
+              <div class="item__increment">
+                <button type="button" class="less">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="more">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__item">
+            <div class="item__label">
+              <div for="money">
+                Aporte
+                <span id="increaseInterval"></span>
+              </div>
+            </div>
+            <div class="item__input">
+              <span class="currency">R$</span>
+              <input
+                type="text"
+                id="increase"
+                name="increase"
+                placeholder
+                value="0"
+                step="100"
+              />
+              <div class="item__increment">
+                <button type="button" class="less">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="more">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="item__label">
+              <span for="duration">Tempo de investimento</span>
+              <div class="item__range">
+                <input
+                  type="range"
+                  id="duration"
+                  class="range-slider"
+                  name="duration"
+                  min="1"
+                  max="60"
+                  step="1"
+                  value="12"
+                />
+                <span class="range-value" id="result-duration"></span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="item__label item__switch">
+              <div class="item__checkbox"></div>
+            </div>
+          </div>
+        </div>
+        <div class="box-gray tax">
+          <div class="tax__label">
+            <h3>Selecione a taxa:</h3>
+          </div>
+          <div class="tax__value">
+            <select class="tax__value" name="tax" id="tax"></select>
+          </div>
+        </div>
+        <div class="box-green result good">
+          <div class="result__img">
+            <img src="img/money-green.png" alt="Renda Segura" />
+          </div>
+          <div class="result__value">
+            <span class="title">Resultado Final</span>
+            <div class="currency-value">
+              <span class="currency">R$</span>
+              <span class="value" id="result-by-tax"></span>
+            </div>
+            <div class="currency-diff">
+              <strong id="result-diff"></strong>
+              <span>A mais do que a renda fixa</span>
+            </div>
+          </div>
+        </div>
+        <div class="box-red result bad">
+          <div class="result__img">
+            <img src="img/money-red.png" alt="Renda Segura" />
+          </div>
+          <div class="result__value">
+            <span class="title">Renda Fixa</span>
+            <div class="currency-value">
+              <span class="currency">R$</span>
+              <span class="value" id="result-tax-1"></span>
+            </div>
+          </div>
+        </div>
+        <div class="box-gray chart">
+          <div id="chart-canvas">
+            <canvas id="myChart"></canvas>
+            <div class="chart__legends">
+              <span class="legends__title"
+                >Selecione as linhas que você quer ver no gráfico:</span
+              >
+              <div id="legends"></div>
+            </div>
+            <div class="chart__disclaimer">
+              <p>
+                Estes valores não são uma garantia de rentabilidade futura. São
+                uma estimativa projetada de uma rentabilidade consistente no day
+                trade, usando o indicador Titã em Mesas Proprietárias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="/js/rocket-loader.min.js"
+      data-cf-settings="7f53ec26eef9c7a434210480-|49"
+      defer
+    ></script>
+  </body>
+
+  <script
+    src="/js/w3.js"
+    type="7f53ec26eef9c7a434210480-text/javascript"
+  ></script>
+  <script type="7f53ec26eef9c7a434210480-text/javascript">
+    w3.includeHTML()
+  </script>
+
+  <script
+    src="https://kit.fontawesome.com/7d896d6411.js"
+    crossorigin="anonymous"
+    type="7f53ec26eef9c7a434210480-text/javascript"
+  ></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+    type="7f53ec26eef9c7a434210480-text/javascript"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.js"
+    type="7f53ec26eef9c7a434210480-text/javascript"
+  ></script>
+  <script
+    src="js/calc.rs.js?v=34324324342333"
+    defer
+    type="7f53ec26eef9c7a434210480-text/javascript"
+  ></script>
+</html>
